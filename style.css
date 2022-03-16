@@ -41,11 +41,48 @@ body {
   grid-area: header;
 }
 
+h1 {
+  animation-duration: 3s;
+  animation-name: aparecer;
+  animation-iteration-count: infinite;
+}
+
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .contenedor .contenido {
+  animation-name: myfirst;
+  animation-duration: 5s;
+  position: relative;
   grid-area: contenido;
 }
 
+@keyframes myfirst {
+  0% {
+    background: #fff;
+  }
+  25% {
+    background: rgb(245, 132, 132);
+  }
+  50% {
+    background: rgb(248, 162, 162);
+  }
+  100% {
+    background: #ff5fc2;
+  }
+}
+
 .contenedor .sidebar {
+  transition: all 2s ease;
   grid-column: 3/4;
   background: #faa43d;
   text-align: center;
@@ -57,8 +94,13 @@ body {
   grid-area: sidebar;
 }
 
+.sidebar:hover {
+  background-color: turquoise;
+}
+
 .contenedor .widget-1,
 .contenedor .widget-2 {
+  transition: box-shadow 0.4s ease;
   background: #55a8fd;
   color: #fff;
   height: 100px;
@@ -66,6 +108,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+}
+
+.widget-1:hover {
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 80%);
+}
+
+.widget-2:hover {
+  box-shadow: 0 0.1rem 0.4rem rgba(38, 255, 0, 0.8);
 }
 
 .contenedor .widget-1 {
