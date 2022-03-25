@@ -1,0 +1,64 @@
+$bg-primero: rgb(223, 223, 223);
+$bg-segundo: rgb(133, 133, 133);
+$bg-tercero: rgb(88, 88, 88);
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $bg-primero;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+  nav {
+    .menu {
+      background-color: $bg-segundo;
+      list-style-type: none;
+      padding: 0;
+      width: 90%;
+      margin: 20px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      li {
+        padding: 0.7rem;
+        margin: 0.7rem;
+        a {
+          color: $bg-tercero;
+          text-decoration: none;
+          padding: 20px;
+          &:hover {
+            background-color: $bg-segundo;
+            color: $bg-primero;
+          }
+        }
+      }
+    }
+  }
+}
+
+.prueba1 {
+  padding: 1rem;
+  margin: 1rem;
+  color: $bg-segundo;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto;
+  grid-template-areas:
+    "tituloe tituloe"
+    "textoe";
+  .tituloe {
+    text-decoration: underline;
+    grid-area: tituloe;
+    text-align: center;
+    margin: 2rem;
+  }
+  .textoe {
+    line-height: 2;
+    grid-area: textoe;
+  }
+}
